@@ -263,6 +263,8 @@ extern NSAttributedStringKey const ZSWTappableLabelTappableRegionAttributeName
 - (nullable id<ZSWTappableLabelTappableRegionInfo>)
     tappableRegionInfoForPreviewingContext:(id<UIViewControllerPreviewing>)previewingContext location:(CGPoint)location;
 
+- (NSInteger)characterIndexForTouch:(UITouch*)touch;
+
 @end
 
 NS_ASSUME_NONNULL_END

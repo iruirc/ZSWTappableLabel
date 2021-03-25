@@ -426,6 +426,13 @@ typedef NS_ENUM(NSInteger, ZSWTappableLabelNotifyType) {
     return [self tappableRegionInfoAtPoint:[previewingContext.sourceView convertPoint:location toView:self]];
 }
 
+- (NSInteger)characterIndexForTouch:(UITouch*)touch {
+    ZSWTappableLabelTouchHandling *touchHandling = [self createTouchHandlingIfNeeded];
+    CGPoint point = [touch locationInView:self];
+    NSUInteger characterIdx = [touchHandling characterIndexAtPoint:point];
+    return characterIdx;
+}
+
 #pragma mark - Accessibility
 
 - (BOOL)isAccessibilityElement {
